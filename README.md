@@ -8,7 +8,7 @@ A flutter plugin to get all images, audios, videos and files location path in js
 
 ```dart
 dependencies:
- storage_path: ^0.0.1
+ flutter_storage_path: ^0.0.1
 ```
 
 
@@ -96,3 +96,8 @@ Video Json Sample
   }
 ]
 ```
+## Special Thanks to
+- [Vivek Sharma](https://github.com/follow2vivek) for base [StoragePath](https://github.com/follow2vivek/StoragePath) repository
+
+## Thank you for contribution
+- [Aman Gupta](https://github.com/thealteria)
