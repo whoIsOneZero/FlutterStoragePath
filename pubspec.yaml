@@ -1,4 +1,4 @@
-name: storage_path
+name: flutter_storage_path
 description: A flutter plugin to get image, audio, video and files path.
 version: 0.0.1
 author: Ashish Jajoria <akakenterprises@gmail.com>

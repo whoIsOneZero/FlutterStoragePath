@@ -1,6 +1,6 @@
 # StoragePath
 
-A flutter plugin to get all images, audios, videos and files location path in json format.
+A flutter plugin to get all images, audios, videos and files location path in json format based on [StoragePath](https://github.com/follow2vivek/StoragePath).
 
 > Only for Android.
 > If you like this plugin, buy me a cup of coffee.
@@ -8,7 +8,7 @@ A flutter plugin to get all images, audios, videos and files location path in js
 
 ```dart
 dependencies:
- storage_path: ^0.2.0
+ storage_path: ^0.0.1
 ```
 
 
