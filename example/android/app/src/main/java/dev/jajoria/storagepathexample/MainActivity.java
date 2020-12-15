@@ -1,4 +1,4 @@
-package com.follow2vivek.storagepathexample;
+package example.android.app.src.main.java.dev.jajoria.storagepathexample;
 
 import io.flutter.embedding.android.FlutterActivity;
 

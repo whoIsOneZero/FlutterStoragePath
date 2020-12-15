@@ -1,12 +1,10 @@
-package com.follow2vivek.storagepath;
+package dev.jajoria.storagepath;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-/**
- * Created by Vivek Sharma - @follow2vivek on 06-Mar-19.
- */
+
 class FileModel implements Serializable {
 
     @SerializedName("folderName")

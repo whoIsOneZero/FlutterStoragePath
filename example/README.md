@@ -4,7 +4,7 @@ A flutter plugin to get image, audio, video and files path.
 
 > Only for Android.
 > If you like this plugin, buy me a cup of coffee.
-> [PayPal](https://www.paypal.me/follow2vivek/)
+> [PayPal](https://paypal.me/ashishjajoria)
 
 ```dart
 dependencies:

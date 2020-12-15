@@ -1,7 +1,7 @@
-package com.follow2vivek.storagepath;
+package dev.jajoria.storagepath;
 
 import android.Manifest;
-import android.app.Activity;
+import io.flutter.embedding.android.FlutterActivity;
 import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
@@ -34,17 +34,17 @@ public class StoragePathPlugin implements MethodCallHandler {
      */
     public static ArrayList<FileModel> filesModelArrayList;
     boolean hasFolder = false;
-    Activity activity;
+    FlutterActivity activity;
     public static ArrayList<MediaModel> mediaModelArrayList;
     public static ArrayList<DocumentModel> fileModelArrayList;
 
-    StoragePathPlugin(Activity activity) {
+    StoragePathPlugin(FlutterActivity activity) {
         this.activity = activity;
     }
 
     public static void registerWith(Registrar registrar) {
         final MethodChannel channel = new MethodChannel(registrar.messenger(), "storage_path");
-        channel.setMethodCallHandler(new StoragePathPlugin(registrar.activity()));
+        channel.setMethodCallHandler(new StoragePathPlugin((FlutterActivity) registrar.activity()));
     }
 
     @Override

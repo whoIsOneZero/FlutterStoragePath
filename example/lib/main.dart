@@ -15,32 +15,23 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  String imagePath = "";
+  List<FileModel> _files = new List<FileModel>();
+  FileModel _selectedModel;
 
   @override
   void initState() {
     super.initState();
-    getAudioPath();
-    getVideoPath();
+    getImagesPath();
   }
 
-  Future<void> getImagesPath() async {
-    String imagespath = "";
-    try {
-      imagespath = await StoragePath.imagesPath;
-      var response = jsonDecode(imagespath);
-      print(response);
-      var imageList = response as List;
-      List<FileModel> list =
-      imageList.map<FileModel>((json) => FileModel.fromJson(json)).toList();
-
+  getImagesPath() async {
+    var imagePath = await StoragePath.imagesPath;
+    var images = jsonDecode(imagePath) as List;
+    _files = images.map<FileModel>((e) => FileModel.fromJson(e)).toList();
+    if (_files != null && _files.length > 0)
       setState(() {
-        imagePath = list[11].files[0];
+        _selectedModel = _files[0];
       });
-    } on PlatformException {
-      imagespath = 'Failed to get path';
-    }
-    return imagespath;
   }
 
   Future<void> getVideoPath() async {
@@ -82,21 +73,30 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Plugin example app'),
         ),
-        body: Center(
-          child: Container(
-            width: 200,
-            height: 200,
-            child: imagePath != ""
-                ? Image.file(
-              File(imagePath),
-              fit: BoxFit.contain,
-            )
-                : Container(),
+        body: _selectedModel == null ||
+            (_selectedModel != null && _selectedModel.files.length < 1)
+            ? Container()
+            : GridView.builder(
+          itemCount: _selectedModel.files.length,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 4,
+            crossAxisSpacing: 4,
+            mainAxisSpacing: 4,
           ),
+          itemBuilder: (_, i) {
+            var file = _selectedModel.files[i];
+            return Container(
+              child: Image.file(
+                File(file),
+                fit: BoxFit.cover,
+              ),
+            );
+          },
         ),
       ),
     );
