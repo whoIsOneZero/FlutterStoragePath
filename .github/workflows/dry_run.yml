@@ -5,7 +5,7 @@ on:
     branches: [ master ]
 
 jobs:
-  publish:
+  dry_run:
 
     runs-on: ubuntu-latest
 
