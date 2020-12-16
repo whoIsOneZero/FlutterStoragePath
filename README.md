@@ -1,3 +1,5 @@
+![Publish](https://github.com/ashish-jajoria/FlutterStoragePath/workflows/Publish/badge.svg?branch=master&event=push)
+
 # StoragePath
 
 A flutter plugin to get all images, audios, videos and files location path in json format based on [StoragePath](https://github.com/follow2vivek/StoragePath).
