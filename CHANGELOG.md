@@ -1,3 +1,6 @@
+## 1.0.1
+- Bump version
+
 ## 1.0.0
 - Plugin updated to flutter 3.3.0
 - Added support for new Android plugins APIs
