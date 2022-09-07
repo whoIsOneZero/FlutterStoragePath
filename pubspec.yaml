@@ -11,6 +11,10 @@ dependencies:
   flutter:
     sdk: flutter
 
+false_secrets:
+  - /lib/src/hardcoded_api_key.dart
+  - /test/localhost_certificates/*.pem
+
 # For information on the generic Dart part of this file, see the
 # following page: https://www.dartlang.org/tools/pub/pubspec
 
