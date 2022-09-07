@@ -1,7 +1,12 @@
 package dev.jajoria.storagepath;
 
 import android.Manifest;
+
 import io.flutter.embedding.android.FlutterActivity;
+import io.flutter.embedding.engine.plugins.activity.ActivityAware;
+import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding;
+
+
 import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
@@ -19,16 +24,18 @@ import java.io.File;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
+import androidx.annotation.NonNull;
+
+import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
-import io.flutter.plugin.common.PluginRegistry.Registrar;
 
 /**
  * StoragePathPlugin
  */
-public class StoragePathPlugin implements MethodCallHandler {
+public class StoragePathPlugin implements MethodCallHandler, FlutterPlugin, ActivityAware {
     /**
      * Plugin registration.
      */
@@ -37,14 +44,37 @@ public class StoragePathPlugin implements MethodCallHandler {
     FlutterActivity activity;
     public static ArrayList<MediaModel> mediaModelArrayList;
     public static ArrayList<DocumentModel> fileModelArrayList;
+    private MethodChannel channel;
 
-    StoragePathPlugin(FlutterActivity activity) {
-        this.activity = activity;
+    @Override
+    public void onAttachedToEngine(@NonNull FlutterPluginBinding binding) {
+        channel = new MethodChannel(binding.getBinaryMessenger(), "storage_path");
+        channel.setMethodCallHandler(this);
     }
 
-    public static void registerWith(Registrar registrar) {
-        final MethodChannel channel = new MethodChannel(registrar.messenger(), "storage_path");
-        channel.setMethodCallHandler(new StoragePathPlugin((FlutterActivity) registrar.activity()));
+    @Override
+    public void onDetachedFromEngine(@NonNull FlutterPluginBinding binding) {
+        channel.setMethodCallHandler(null);
+    }
+
+    @Override
+    public void onAttachedToActivity(ActivityPluginBinding activityPluginBinding) {
+        activity = (FlutterActivity) activityPluginBinding.getActivity();
+    }
+
+    @Override
+    public void onDetachedFromActivityForConfigChanges() {
+        activity = null;
+    }
+
+    @Override
+    public void onReattachedToActivityForConfigChanges(ActivityPluginBinding activityPluginBinding) {
+        activity = (FlutterActivity) activityPluginBinding.getActivity();
+    }
+
+    @Override
+    public void onDetachedFromActivity() {
+        activity = null;
     }
 
     @Override
