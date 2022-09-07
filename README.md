@@ -10,7 +10,7 @@ A flutter plugin to get all images, audios, videos and files location path in js
 
 ```dart
 dependencies:
- flutter_storage_path: ^0.0.2
+ flutter_storage_path: ^1.0.0
 ```
 
 
