@@ -1,4 +1,4 @@
-![Publish](https://github.com/ashish-jajoria/FlutterStoragePath/workflows/Publish/badge.svg?branch=master&event=push)
+[comment]: <> (![Publish]&#40;https://github.com/ashish-jajoria/FlutterStoragePath/workflows/Publish/badge.svg?branch=master&event=push&#41;)
 
 # StoragePath
 
