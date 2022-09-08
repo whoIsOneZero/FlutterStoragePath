@@ -1,3 +1,6 @@
+## 1.0.3
+- Updated Readme.md
+
 ## 1.0.2
 - Updated plugin to meet 140/140 pub points
 
