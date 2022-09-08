@@ -1,3 +1,6 @@
+## 1.0.2
+- Updated plugin to meet 140/140 pub points
+
 ## 1.0.1
 - Bump version
 

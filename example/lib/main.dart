@@ -79,25 +79,25 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Plugin example app'),
         ),
         body: _selectedModel == null ||
-            (_selectedModel != null && _selectedModel.files.length < 1)
+                (_selectedModel != null && _selectedModel.files.length < 1)
             ? Container()
             : GridView.builder(
-          itemCount: _selectedModel.files.length,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 4,
-            crossAxisSpacing: 4,
-            mainAxisSpacing: 4,
-          ),
-          itemBuilder: (_, i) {
-            var file = _selectedModel.files[i];
-            return Container(
-              child: Image.file(
-                File(file),
-                fit: BoxFit.cover,
+                itemCount: _selectedModel.files.length,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 4,
+                  crossAxisSpacing: 4,
+                  mainAxisSpacing: 4,
+                ),
+                itemBuilder: (_, i) {
+                  var file = _selectedModel.files[i];
+                  return Container(
+                    child: Image.file(
+                      File(file),
+                      fit: BoxFit.cover,
+                    ),
+                  );
+                },
               ),
-            );
-          },
-        ),
       ),
     );
   }
