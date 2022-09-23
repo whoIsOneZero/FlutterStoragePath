@@ -4,38 +4,46 @@
 
 A flutter plugin to get all images, audios, videos and files location path in json format based on [StoragePath](https://github.com/follow2vivek/StoragePath).
 
-> Only for Android.
-> If you like this plugin, buy me a cup of coffee.
-> [PayPal](https://paypal.me/ashishjajoria)
+> **Only for Android.**
+>
+> _On IOS will just give you an empty array i.e. []_
+
+###### pubspec.yaml
 
 ```dart
 dependencies:
- flutter_storage_path: ^1.0.3
+  flutter_storage_path: ^1.0.4
 ```
 
+###### example.dart
 
 ```dart
-import 'package:storage_path/storage_path.dart';
+import 'package:flutter_storage_path/flutter_storage_path.dart';
 ```
-Sample Code
-```dart 
- try {
+
+```dart
+    try {
       imagePath = await StoragePath.imagesPath; //contains images path and folder name in json format
     } on PlatformException {
       imagesPath = 'Failed to get path';
     }
+    
 ```
-AND
+
+Similarly
 
 ```dart
-videoPath = await StoragePath.videoPath; //this will return videos path
-audioPath = await StoragePath.audioPath; //this will return audios path
-filePath = await StoragePath.filePath; //this will return files path
+    videoPath = await StoragePath.videoPath; //this will return videos path
+    audioPath = await StoragePath.audioPath; //this will return audios path
+    filePath = await StoragePath.filePath; //this will return files path
+
 ```
 
-Image Json Sample
- ```json 
+## Samples:
 
+- Image Json Sample
+
+```json 
 [
   {
     "files": [
@@ -45,8 +53,10 @@ Image Json Sample
     "folderName": "screenshot"
   }
 ]
-  ```
-File Json Sample
+```
+
+- File Json Sample
+
 ```json
 [
   {
@@ -62,7 +72,9 @@ File Json Sample
   }
 ]
 ```
-Audio Json Sample
+
+- Audio Json Sample
+
 ```json
 [
   {
@@ -81,7 +93,9 @@ Audio Json Sample
   }
 ]
 ```
-Video Json Sample
+
+- Video Json Sample
+
 ```json
 [
   {
@@ -98,8 +112,15 @@ Video Json Sample
   }
 ]
 ```
-## Special Thanks to
+
+## Special Thanks to:
+
 - [Vivek Sharma](https://github.com/follow2vivek) for base [StoragePath](https://github.com/follow2vivek/StoragePath) repository
 
-## Thank you for contribution
+## Thank you for contribution:
+
 - [Aman Gupta](https://github.com/thealteria)
+
+## If you like this plugin:
+
+Buy me a cup of coffee ☕. [PayPal](https://paypal.me/ashishjajoria)

@@ -1,3 +1,6 @@
+## 1.0.4
+- Fixed iOS build failed issue
+
 ## 1.0.3
 - Updated Readme.md
 
