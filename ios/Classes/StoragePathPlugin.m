@@ -1,5 +1,5 @@
 #import "StoragePathPlugin.h"
-#import <storage_path/storage_path-Swift.h>
+#import <flutter_storage_path/flutter_storage_path-Swift.h>
 
 @implementation StoragePathPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {

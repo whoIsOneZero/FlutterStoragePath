@@ -9,6 +9,7 @@ public class SwiftStoragePathPlugin: NSObject, FlutterPlugin {
   }
 
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
-    result("iOS " + UIDevice.current.systemVersion)
+    result("[]")
+    // result("iOS " + UIDevice.current.systemVersion)
   }
 }
