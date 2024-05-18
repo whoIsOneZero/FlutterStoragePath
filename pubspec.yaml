@@ -11,6 +11,8 @@ dependencies:
   flutter:
     sdk: flutter
 
+  permission_handler: ^11.2.0
+
 false_secrets:
   - /lib/src/hardcoded_api_key.dart
   - /test/localhost_certificates/*.pem
